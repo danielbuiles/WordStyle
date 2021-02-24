@@ -10,7 +10,6 @@
 </head>
 <body>
     <div class="text">
-        <!--<div class="txtBox">Just <span>4</span> Fun</div>-->
     </div>
     <footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>

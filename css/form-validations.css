@@ -28,3 +28,13 @@ body{
     max-width:200px;
     background-color: #50C134;
 }
+
+.Error{
+    color: red;
+}
+
+.A_Paleta{
+    text-decoration: none;
+    cursor: pointer;
+    color: red;
+}

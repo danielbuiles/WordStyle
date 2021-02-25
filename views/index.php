@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/styleindex.php" type="text/css" media="all">
+    <!-- CSS only -->
     <title>Text Effetc || Person</title>
 </head>
 <body>
@@ -33,6 +34,7 @@
                 })
             })
         </script>
+        <a href="Home.php"><<<</a>
     </footer>
 </body>
 </html>

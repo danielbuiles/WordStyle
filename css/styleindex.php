@@ -2,6 +2,7 @@
 
 ?>
 
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
 
 *{
@@ -40,3 +41,11 @@ body{
 .text .txtBox span{
 color: #f00;
 }
+
+a{
+    font-size: 40px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+}
+</style>

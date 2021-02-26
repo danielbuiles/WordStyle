@@ -1,8 +1,12 @@
 <?php header("Content-Type: text/css; charset: UTF-8");
-
+session_start();
+if(isset($_SESSION['Text']))
+{
+    $ClFondo=$_SESSION['Cl_Fondo'];
+    $ClLetra=$_SESSION['Cl_Letra'];
+}
 ?>
 
-<style>
 @import url('https://fonts.googleapis.com/css2?family=Stick&display=swap');
 
 *{
@@ -15,19 +19,20 @@
 body{
     width: 100%;
     height: 100vh;
-    background: #000;
+    background: <?php echo($ClFondo); ?>;
     overflow: hidden;
 }
 
 .text{
     position:relative;
     transform: rotate(calc(-0.2deg * 100));
+    z-index: 1;
 }
 
 .text .txtBox{
     position: absolute;
     font-size: 10vw;
-    color: #fff;
+    color: <?php echo($ClLetra) ?>;
     transform: translate(-50%,-50%);
     display: flex;
     align-items: center;
@@ -47,5 +52,6 @@ a{
     cursor: pointer;
     color: #fff;
     text-decoration: none;
+    z-index: 99;
+    position: absolute;
 }
-</style>

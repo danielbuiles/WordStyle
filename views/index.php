@@ -1,3 +1,16 @@
+<?php 
+session_start();
+if(isset($_SESSION['Text']))
+{
+    $Text=$_SESSION['Text'];
+    $Style=$_SESSION['Style'];
+}
+else
+{
+    header("location:Home.php");
+    die;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +32,7 @@
             for (let i = 0; i <= 100; i++) {
                 let box = document.createElement('div');
                 box.classList.add('txtBox');
-                box.innerHTML="Just <span>4</span> Fun";
+                box.innerHTML="<?php echo($Text) ?>";
                 document.querySelector(".text").appendChild(box);
             }
 
@@ -29,12 +42,12 @@
                     y : e.clientY,
                     stagger: -0.01,
                     rotate : (i,terget) => {
-                        return (i+1)* 0.1;
+                        return (i+1)* <?php echo($Style) ?>;
                     }
                 })
             })
         </script>
-        <a href="Home.php"><<<</a>
+        <a href="../routes/SessionClose.php"><<<</a>
     </footer>
 </body>
 </html>

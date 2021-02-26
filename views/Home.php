@@ -1,19 +1,30 @@
 <?php 
+session_start();
 $RegularExpresion="/^#[0-9|A-Z][0-9|A-Z][0-9|A-Z][0-9|A-Z][0-9|A-Z][0-9|A-Z]/";
-if (isset($_POST["Btn_Enviar"])) 
+if (isset($_SESSION['Text'])) 
 {
-  $Text=$_POST['Username'];
-  $Style=$_POST['NoEstilo'];
-  $Color_Fondo=$_POST['ClFondo'];
-  $Color_Letra=$_POST['ClLetra'];
+  header("location:index.php");
+}
+else 
+{
+  if (isset($_POST["Btn_Enviar"])) 
+  {
+    $Text=$_POST['Username'];
+    $Style=$_POST['NoEstilo'];
+    $Color_Fondo=$_POST['ClFondo'];
+    $Color_Letra=$_POST['ClLetra'];
 
-  if (strlen($Text)>10 or !preg_match($RegularExpresion,$Color_Fondo) or !preg_match($RegularExpresion,$Color_Letra)) 
-  {
-    echo("mallo");
-  }
-  else
-  {
-    header("location:index.php");
+    if (strlen($Text)>10 or !preg_match($RegularExpresion,$Color_Fondo) or !preg_match($RegularExpresion,$Color_Letra)) 
+    {}
+    else
+    {
+      session_start();
+      $_SESSION['Text']=$Text;
+      $_SESSION['Style']=$Style;
+      $_SESSION['Cl_Fondo']=$Color_Fondo;
+      $_SESSION['Cl_Letra']=$Color_Letra;
+      header("location:index.php");
+    }
   }
 }
 ?>
@@ -59,10 +70,10 @@ if (isset($_POST["Btn_Enviar"]))
                   <label for="state" class="form-label">No.Estylo</label>
                   <select class="form-select" id="state" name="NoEstilo" required>
                     <option value=""></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                    <option value="0">Plano</option>
+                    <option value="0.2">Oblicuo</option>
+                    <option value="1">Lateral</option>
+                    <option value="3.8">Rollo</option>
                   </select>
                 </div>
 
